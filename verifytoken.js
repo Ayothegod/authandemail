@@ -7,8 +7,8 @@ function auth(req,res,next) {
     try {
         const verified = jwt.verify(token, process.env.TOKEN_SECRET)
         req.user = verified
-    } catch (error) {
+    } catch (err) {
         console.log(error);
-        res.send(error)
+        res.send(err)
     }
 }
